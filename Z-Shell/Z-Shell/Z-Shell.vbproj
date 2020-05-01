@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37EEBB0A-2971-4CE8-9430-8F625B3407BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>ZShell</RootNamespace>
+    <AssemblyName>Z-Shell</AssemblyName>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Z-Shell.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Z-Shell.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\ShellAction.vb" />
+    <Compile Include="Actions\ShowStartMenu.vb" />
+    <Compile Include="Controls\AppbarForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\InfoLabel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesktopWindow.vb" />
+    <Compile Include="Forms\DesktopForm.Designer.vb">
+      <DependentUpon>DesktopForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DesktopForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileActions.vb" />
+    <Compile Include="Forms\InspectorForm.Designer.vb">
+      <DependentUpon>InspectorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InspectorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShellRendererEditor.Designer.vb">
+      <DependentUpon>ShellRendererEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShellRendererEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UILoadingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\ShellControlConfig.vb" />
+    <Compile Include="Framework\ShellRenderer.vb">
+    </Compile>
+    <Compile Include="Framework\IShellControl.vb" />
+    <Compile Include="HotkeyManager.vb" />
+    <Compile Include="Controls\NotifyIconBar.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IMalloc.vb" />
+    <Compile Include="Renderers.vb" />
+    <Compile Include="ShellFileInfo.vb" />
+    <Compile Include="Forms\FolderWindow.Designer.vb">
+      <DependentUpon>FolderWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FolderWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IShellFolder.vb" />
+    <Compile Include="Controls\AllProgramsTree.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ShellDialogs.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ShellLink.vb" />
+    <Compile Include="StyleLoader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System.vb" />
+    <Compile Include="SystemTray.vb" />
+    <Compile Include="Forms\TaskBarForm.Designer.vb">
+      <DependentUpon>TaskBarForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TaskBarForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotKey.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="NativeWindowEx.vb" />
+    <Compile Include="ShellEvents.vb" />
+    <Compile Include="Forms\StartMenu.Designer.vb">
+      <DependentUpon>StartMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StartMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartupShell.vb" />
+    <Compile Include="Controls\TaskBarControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowInfo.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\DesktopForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DesktopForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FolderWindow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FolderWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InspectorForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InspectorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShellRendererEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShellRendererEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaskBarForm.resx">
+      <DependentUpon>TaskBarForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartMenu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StartMenu.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-forward_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-forward_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\applications_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\applications_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\applications_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-back_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-back_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-back_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-forward_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disc-media_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disc-media_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disc-media_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documents_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documents_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documents_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-closed_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-closed_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-closed_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-open_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-open_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-open_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\undo_32.png" />
+    <None Include="ShellStyle.xsd">
+      <SubType>
+      </SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ShellStyle.xsx">
+      <DependentUpon>ShellStyle.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DefaultStyle\DefaultStyle.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Z-Pixel\Z-Pixel\Z-Pixel.vbproj">
+      <Project>{4BD4C78E-B084-4FB7-B3F7-8211C3291BA3}</Project>
+      <Name>Z-Pixel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

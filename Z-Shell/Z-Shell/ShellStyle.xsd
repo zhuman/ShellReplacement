@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ShellStyle" targetNamespace="http://z-sys.org/Documents/ShellStyle.xsd" elementFormDefault="qualified" xmlns="http://z-sys.org/Documents/ShellStyle.xsd" xmlns:mstns="http://z-sys.org/Documents/ShellStyle.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+  <xs:element name="ShellStyle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Description" type="xs:string">
+        </xs:element>
+        <xs:element name="Copyright" type="xs:string">
+        </xs:element>
+        <xs:element name="Author" type="xs:string">
+        </xs:element>
+        <xs:element name="Panels">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Panel" type="ShellPanel" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="FormatVersion" type="FormatVersion" />
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Controls">
+    <xs:sequence>
+      <xs:element name="ShellControl" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+          </xs:sequence>
+          <xs:attribute name="Type" type="xs:string" />
+          <xs:attribute name="ConfigFile" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShellPanel" abstract="true">
+    <xs:sequence>
+      <xs:element name="Controls" type="Controls" />
+    </xs:sequence>
+    <xs:attribute name="Opacity" type="ZeroToOne" />
+  </xs:complexType>
+  <xs:complexType name="LayeredWin">
+    <xs:complexContent>
+      <xs:extension base="ShellPanel">
+        <xs:sequence>
+        </xs:sequence>
+        <xs:attribute name="TopMost" type="xs:boolean" />
+        <xs:attribute name="Y" type="xs:positiveInteger" />
+        <xs:attribute name="X" type="xs:positiveInteger" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FloatingWin">
+    <xs:complexContent>
+      <xs:extension base="ShellPanel">
+        <xs:sequence>
+        </xs:sequence>
+        <xs:attribute name="BorderStyle" type="FormBorderStyle" />
+        <xs:attribute name="Width" type="xs:positiveInteger" />
+        <xs:attribute name="X" type="xs:positiveInteger" />
+        <xs:attribute name="Height" type="xs:positiveInteger" />
+        <xs:attribute name="Y" type="xs:positiveInteger" />
+        <xs:attribute name="TopMost" type="xs:boolean" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Edgebar">
+    <xs:complexContent>
+      <xs:extension base="ShellPanel">
+        <xs:sequence>
+        </xs:sequence>
+        <xs:attribute name="Edge" type="Edge" />
+        <xs:attribute name="Size" type="xs:positiveInteger" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ZeroToOne">
+    <xs:restriction base="xs:float">
+      <xs:maxInclusive value="1" />
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Edge">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Top" />
+      <xs:enumeration value="Bottom" />
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FormBorderStyle">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fixed3D" />
+      <xs:enumeration value="FixedDialog" />
+      <xs:enumeration value="FixedSingle" />
+      <xs:enumeration value="FixedToolWindow" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Sizable" />
+      <xs:enumeration value="SizableToolWindow" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FormatVersion">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:enumeration value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

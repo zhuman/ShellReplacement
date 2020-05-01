@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ShellStyle xmlns="http://z-sys.org/Documents/ShellStyle.xsd" FormatVersion="1">
+  <Description>
+    The default style for Z-Shell.
+  </Description>
+  <Copyright>
+    Copyright (C) 2007 Z-Systems
+  </Copyright>
+  <Author>
+    Zachary Northrup
+  </Author>
+  <Panels>
+    <Panel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Edgebar" Edge="Top" Size="32" Opacity="0.5">
+      <Controls>
+        <ShellControl Type="TaskBarControl" />
+        <ShellControl Type="NotifyIconBar" />
+      </Controls>
+    </Panel>
+  </Panels>
+</ShellStyle>

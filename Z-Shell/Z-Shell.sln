@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Z-Shell", "Z-Shell\Z-Shell.vbproj", "{37EEBB0A-2971-4CE8-9430-8F625B3407BC}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Z-Shell Editor", "Z-Shell Editor\Z-Shell Editor.vbproj", "{BA49ED25-2526-455B-BD4F-E44689B04CC3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Z-Pixel", "..\Z-Pixel\Z-Pixel\Z-Pixel.vbproj", "{4BD4C78E-B084-4FB7-B3F7-8211C3291BA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37EEBB0A-2971-4CE8-9430-8F625B3407BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37EEBB0A-2971-4CE8-9430-8F625B3407BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37EEBB0A-2971-4CE8-9430-8F625B3407BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37EEBB0A-2971-4CE8-9430-8F625B3407BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA49ED25-2526-455B-BD4F-E44689B04CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA49ED25-2526-455B-BD4F-E44689B04CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA49ED25-2526-455B-BD4F-E44689B04CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA49ED25-2526-455B-BD4F-E44689B04CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD4C78E-B084-4FB7-B3F7-8211C3291BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD4C78E-B084-4FB7-B3F7-8211C3291BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD4C78E-B084-4FB7-B3F7-8211C3291BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD4C78E-B084-4FB7-B3F7-8211C3291BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
