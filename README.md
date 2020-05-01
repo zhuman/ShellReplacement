@@ -1,6 +1,8 @@
 # Z-Shell
 
-Z-Shell is an open-source, managed, Windows replacement shell written entirely in VB.NET. If you don't know what a Windows shell is or why you would want to replace it, see the [FAQ]. The end vision is to have a highly customizable, theme/style-based shell and editor. You will be able to actually design every part of the shell from menus to panels to taskbars using a fairly simple theme editor.
+> NOTE: This project is archived from 2007. It is not being actively developed.
+
+Z-Shell is an open-source, managed, Windows replacement shell written entirely in VB.NET. If you don't know what a Windows shell is or why you would want to replace it, see the [FAQ](wiki/FAQ.md). The end vision is to have a highly customizable, theme/style-based shell and editor. You will be able to actually design every part of the shell from menus to panels to taskbars using a fairly simple theme editor.
 
 Z-Shell is managed by [Z-Systems](http://www.z-sys.org/). The Z-Systems site also contains a [Z-Shell](http://www.z-sys.org/zshell.aspx) page.
 
